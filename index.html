@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oma Bakery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="CSS/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">Oma Bakery</div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Welcome to Oma Bakery</h1>
+        <p>Delicious pastries made with love 💜</p>
+        <button class="btn" onclick="showPopup()">Order Now</button>
+      </div>
+    </section>
+
+    <section class="gallery" id="menu">
+      <div class="container">
+        <h2 class="section-title fade-in">Our Specials</h2>
+        <div class="images">
+          <div class="image-item fade-in">
+            <img src="image/cake.jpg" alt="Cake" />
+            <div class="image-name">Signature Cakes</div>
+          </div>
+          <div class="image-item fade-in">
+            <img src="image/cupcakes.jpg" alt="Cupcakes" />
+            <div class="image-name">Artisan Cupcakes</div>
+          </div>
+          <div class="image-item fade-in">
+            <img src="image/bread.jpg" alt="Bread" />
+            <div class="image-name">Freshly Baked Bread</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container">
+        <h2 class="section-title fade-in">About Us</h2>
+        <p class="fade-in">
+          At Oma Bakery, we bake from the heart. Using the freshest ingredients,
+          we create mouthwatering treats perfect for every celebration. Our
+          family recipes have been passed down through generations, ensuring
+          that every bite carries the warmth and love of homemade goodness.
+        </p>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <h2 class="section-title fade-in">Contact Us</h2>
+        <div class="contact-info">
+          <div class="contact-item fade-in">
+            <p>Email:</p>
+            <p><a href="mailto:info@omabakery.com">info@omabakery.com</a></p>
+          </div>
+          <div class="contact-item fade-in">
+            <p>Phone:</p>
+            <p id="phone-number">+1 (555) 732-9834</p>
+          </div>
+          <div class="contact-item fade-in">
+            <p>Visit Us:</p>
+            <p>123 Bakery Street, Sweet City</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 Oma Bakery. All rights reserved.</p>
+    </footer>
+
+    <button class="fixed-order-btn btn" onclick="showPopup()">Order Now</button>
+
+    <!-- Custom Popup Modal -->
+    <div class="popup-overlay" id="popup">
+      <div class="popup-content">
+        <span class="popup-close" onclick="closePopup()">&times;</span>
+        <div class="popup-icon">🎂</div>
+        <h2 class="popup-title">Thank You for Choosing Oma Bakery!</h2>
+        <p class="popup-text">
+          We're delighted you're considering our delicious pastries. Our team is
+          ready to create something special just for you.
+        </p>
+        <p class="popup-text">
+          Would you like to view our full menu or place an order directly?
+        </p>
+        <div class="popup-buttons">
+          <button class="popup-btn primary" onclick="redirectToMenu()">
+            View Full Menu
+          </button>
+          <button class="popup-btn secondary" onclick="closePopup()">
+            Continue Browsing
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
