@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bakery-cream text-bakery-dark font-body antialiased;
+  }
+
+  ::selection {
+    @apply bg-bakery-teal/20 text-bakery-teal-dark;
+  }
+}
+
+@layer components {
+  .wave-divider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+  }
+
+  .wave-divider svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 80px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #E8EDE5; }
+::-webkit-scrollbar-thumb { background: #2D6A4F; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #1B4332; }
