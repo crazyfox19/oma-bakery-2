@@ -1,4 +1,4 @@
-import WaveDivider from '../components/WaveDivider'
+import ScallopTop from '../components/ScallopTop'
 import Footer from '../components/Footer'
 
 export default function About() {
@@ -22,7 +22,7 @@ export default function About() {
         </div>
       </section>
 
-      <WaveDivider topColor="#F3E8FF" bottomColor="#581C87" />
+      <ScallopTop bgAbove="#F3E8FF" purple="#581C87" />
       <Footer />
     </>
   )

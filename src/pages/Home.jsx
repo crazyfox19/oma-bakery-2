@@ -2,10 +2,10 @@ import { useState } from 'react'
 import { ChevronLeft, ChevronRight, Plus } from 'lucide-react'
 import TestimonialCard from '../components/TestimonialCard'
 import WaveDivider from '../components/WaveDivider'
+import ScallopTop from '../components/ScallopTop'
 import Sparkle from '../components/Sparkle'
 import TagPill from '../components/TagPill'
 import ProductCard from '../components/ProductCard'
-import StepCard from '../components/StepCard'
 import NewsletterSection from '../components/NewsletterSection'
 import Footer from '../components/Footer'
 import Pagination from '../components/Pagination'
@@ -27,26 +27,10 @@ const testimonials = [
 ]
 
 const steps = [
-  {
-    number: 1,
-    title: 'Choose',
-    description: 'Browse our collection and pick your favorite treats from our wide selection of baked goods.',
-  },
-  {
-    number: 2,
-    title: 'Order',
-    description: 'Place your order online or visit our store. We make the process simple and convenient.',
-  },
-  {
-    number: 3,
-    title: 'Customize',
-    description: 'Add your personal touch with custom flavors, decorations, and special messages.',
-  },
-  {
-    number: 4,
-    title: 'Deliver',
-    description: 'Sit back and relax while we deliver your freshly baked goods right to your doorstep.',
-  },
+  { number: 1, title: 'Choose', description: 'Pick your favorite cake flavor and design.' },
+  { number: 2, title: 'Customize', description: 'Add personal touches and special requests.' },
+  { number: 3, title: 'Order', description: 'Place and pay your order via online.' },
+  { number: 4, title: 'Deliver', description: 'Your cake delivered fresh to your door.' },
 ]
 
 export default function Home() {
@@ -108,6 +92,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <WaveDivider topColor="#ECFDF5" bottomColor="#F3E8FF" />
 
       {/* ===== Section 2: Hero with Product ===== */}
       <section className="bg-lavender py-16 sm:py-24 relative overflow-hidden">
@@ -232,89 +218,69 @@ export default function Home() {
         </div>
       </section>
 
-      <WaveDivider topColor="#EDE9FE" bottomColor="#FFFBEB" />
+      <WaveDivider topColor="#EDE9FE" bottomColor="#F3E8FF" />
 
       {/* ===== Section 5: How to Order ===== */}
-      <section className="bg-cream py-16 sm:py-24">
+      <section className="bg-lavender py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="font-playfair text-3xl sm:text-4xl font-bold text-gray-800 mb-4">
-              How to Order
-            </h2>
-            <p className="text-gray-500 max-w-lg mx-auto">
-              Getting your favorite baked goods is easy — just follow these
-              simple steps.
-            </p>
-          </div>
+          <h2 className="font-playfair text-3xl sm:text-4xl font-bold text-primary text-center mb-16">
+            How to Order
+          </h2>
 
-          {/* Desktop zigzag timeline */}
-          <div className="hidden md:block relative">
-            {/* Center line */}
-            <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-primary/20 -translate-x-1/2" />
-
-            <div className="space-y-16">
-              {steps.map((step, i) => {
-                const isLeft = i % 2 === 0
-                return (
-                  <div key={step.number} className="relative flex items-center">
-                    {/* Number circle on center */}
-                    <div className="absolute left-1/2 -translate-x-1/2 w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold font-playfair z-10 shadow-lg">
-                      {step.number}
-                    </div>
-
-                    {isLeft ? (
-                      <>
-                        <div className="w-1/2 pr-16">
-                          <div className="bg-white rounded-2xl shadow-lg p-6 ml-auto max-w-sm">
-                            <h3 className="font-playfair font-bold text-lg text-gray-800 mb-2">
-                              {step.title}
-                            </h3>
-                            <p className="text-gray-500 text-sm leading-relaxed">
-                              {step.description}
-                            </p>
-                          </div>
-                        </div>
-                        <div className="w-1/2" />
-                      </>
-                    ) : (
-                      <>
-                        <div className="w-1/2" />
-                        <div className="w-1/2 pl-16">
-                          <div className="bg-white rounded-2xl shadow-lg p-6 max-w-sm">
-                            <h3 className="font-playfair font-bold text-lg text-gray-800 mb-2">
-                              {step.title}
-                            </h3>
-                            <p className="text-gray-500 text-sm leading-relaxed">
-                              {step.description}
-                            </p>
-                          </div>
-                        </div>
-                      </>
-                    )}
+          {/* Desktop zigzag pill layout */}
+          <div className="hidden md:flex items-start justify-center gap-4 max-w-5xl mx-auto">
+            {steps.map((step, i) => {
+              const isTop = i % 2 === 0
+              return isTop ? (
+                <div key={step.number} className="flex flex-col items-center">
+                  <div className="w-56 h-80 rounded-[100px] bg-cream flex flex-col items-center justify-center px-8 text-center">
+                    <h3 className="font-playfair font-bold text-lg text-primary">{step.title}</h3>
+                    <p className="text-sm text-gray-500 mt-3 leading-relaxed">{step.description}</p>
+                    <div className="w-[2px] h-10 bg-gray-300 mt-5" />
                   </div>
-                )
-              })}
-            </div>
-          </div>
-
-          {/* Mobile vertical timeline */}
-          <div className="md:hidden relative pl-16">
-            <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-primary/20" />
-            <div className="space-y-8">
-              {steps.map((step) => (
-                <div key={step.number} className="relative">
-                  <div className="absolute -left-10 top-0 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center text-lg font-bold font-playfair z-10 shadow-lg">
+                  <div className="w-20 h-20 rounded-full bg-primary text-white font-playfair font-bold text-3xl flex items-center justify-center shadow-lg z-10 -mt-4">
                     {step.number}
                   </div>
-                  <StepCard {...step} />
                 </div>
-              ))}
-            </div>
+              ) : (
+                <div key={step.number} className="flex flex-col items-center mt-28">
+                  <div className="w-20 h-20 rounded-full bg-primary text-white font-playfair font-bold text-3xl flex items-center justify-center shadow-lg z-10 -mb-4">
+                    {step.number}
+                  </div>
+                  <div className="w-56 h-80 rounded-[100px] bg-cream flex flex-col items-center justify-center px-8 text-center">
+                    <h3 className="font-playfair font-bold text-lg text-primary">{step.title}</h3>
+                    <p className="text-sm text-gray-500 mt-3 leading-relaxed">{step.description}</p>
+                    <div className="w-[2px] h-10 bg-gray-300 mt-5" />
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+
+          {/* Mobile vertical stack */}
+          <div className="md:hidden flex flex-col items-center gap-6">
+            {steps.map((step) => (
+              <div key={step.number} className="flex flex-col items-center">
+                <div className="w-20 h-20 rounded-full bg-primary text-white font-playfair font-bold text-3xl flex items-center justify-center shadow-lg z-10 -mb-4">
+                  {step.number}
+                </div>
+                <div className="w-full max-w-[240px] h-80 rounded-[100px] bg-cream flex flex-col items-center justify-center px-8 text-center">
+                  <h3 className="font-playfair font-bold text-lg text-primary">{step.title}</h3>
+                  <p className="text-sm text-gray-500 mt-3 leading-relaxed">{step.description}</p>
+                  <div className="w-[2px] h-10 bg-gray-300 mt-5" />
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <WaveDivider topColor="#FFFBEB" bottomColor="#581C87" />
+      <WaveDivider topColor="#F3E8FF" bottomColor="#FFFBEB" />
+
+      {/* Newsletter */}
+      <NewsletterSection />
+
+      <ScallopTop bgAbove="#FFFBEB" purple="#581C87" />
       <Footer />
 
       {/* Float animation keyframes */}

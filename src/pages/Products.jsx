@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import ProductCard from '../components/ProductCard'
 import WaveDivider from '../components/WaveDivider'
+import ScallopTop from '../components/ScallopTop'
 import Footer from '../components/Footer'
 import Pagination from '../components/Pagination'
 import products from '../data/products'
@@ -39,7 +40,7 @@ export default function Products() {
         </div>
       </section>
 
-      <WaveDivider topColor="#F3E8FF" bottomColor="#581C87" />
+      <ScallopTop bgAbove="#F3E8FF" purple="#581C87" />
       <Footer />
     </>
   )

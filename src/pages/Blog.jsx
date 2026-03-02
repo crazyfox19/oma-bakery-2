@@ -3,6 +3,7 @@ import FilterPill from '../components/FilterPill'
 import BlogCard from '../components/BlogCard'
 import NewsletterSection from '../components/NewsletterSection'
 import WaveDivider from '../components/WaveDivider'
+import ScallopTop from '../components/ScallopTop'
 import Footer from '../components/Footer'
 import Pagination from '../components/Pagination'
 import blogPosts from '../data/blogPosts'
@@ -39,6 +40,8 @@ export default function Blog() {
         </div>
       </section>
 
+      <WaveDivider topColor="#F3E8FF" bottomColor="#FFFBEB" />
+
       {/* Blog grid */}
       <section className="bg-cream py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -61,7 +64,7 @@ export default function Blog() {
       {/* Newsletter */}
       <NewsletterSection />
 
-      <WaveDivider topColor="#FFFBEB" bottomColor="#581C87" />
+      <ScallopTop bgAbove="#FFFBEB" purple="#581C87" />
       <Footer />
     </>
   )

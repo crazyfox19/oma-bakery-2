@@ -29,15 +29,15 @@ const columns = [
 
 export default function Footer() {
   return (
-    <footer className="bg-primary-dark text-white pt-16 pb-8">
+    <footer className="bg-[#581C87] text-white pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
           {/* Logo & description */}
           <div className="col-span-2">
-            <Link to="/" className="font-pacifico text-2xl text-accent">
+            <Link to="/" className="font-pacifico text-2xl text-[#F59E0B]">
               Oma Bakery
             </Link>
-            <p className="text-white/70 mt-4 text-sm leading-relaxed max-w-xs">
+            <p className="text-purple-200 mt-4 text-sm leading-relaxed max-w-xs">
               Bringing joy to every occasion with handcrafted baked goods made
               with love and the finest ingredients.
             </p>
@@ -45,13 +45,13 @@ export default function Footer() {
 
           {columns.map((col) => (
             <div key={col.title}>
-              <h4 className="font-semibold mb-4 text-white/90">{col.title}</h4>
+              <h4 className="font-bold mb-4 text-white">{col.title}</h4>
               <ul className="space-y-2">
                 {col.links.map((link) => (
                   <li key={link.label}>
                     <Link
                       to={link.to}
-                      className="text-white/60 text-sm hover:text-accent transition-colors"
+                      className="text-purple-200 text-sm hover:text-[#F59E0B] transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -62,8 +62,8 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="border-t border-white/10 pt-8 text-center">
-          <p className="text-white/50 text-sm">
+        <div className="border-t border-purple-700 pt-8 text-center">
+          <p className="text-purple-300 text-sm">
             &copy; {new Date().getFullYear()} Oma Bakery. All rights reserved.
           </p>
         </div>

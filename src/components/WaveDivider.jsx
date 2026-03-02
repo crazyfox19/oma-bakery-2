@@ -1,45 +1,16 @@
 export default function WaveDivider({ topColor = '#FFFBEB', bottomColor = '#EDE9FE' }) {
   return (
-    <div className="relative w-full leading-none -mt-px" style={{ color: bottomColor }}>
+    <div className="w-full" style={{ backgroundColor: bottomColor }}>
       <svg
-        viewBox="0 0 1440 80"
+        viewBox="0 0 1440 55"
         preserveAspectRatio="none"
-        className="block w-full h-[60px] sm:h-[80px]"
+        className="w-full block"
+        style={{ marginBottom: '-1px' }}
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M0,0 L0,40
-             Q60,70 120,40
-             Q180,10 240,40
-             Q300,70 360,40
-             Q420,10 480,40
-             Q540,70 600,40
-             Q660,10 720,40
-             Q780,70 840,40
-             Q900,10 960,40
-             Q1020,70 1080,40
-             Q1140,10 1200,40
-             Q1260,70 1320,40
-             Q1380,10 1440,40
-             L1440,0 Z"
+          d="M0,0 L0,25 C40,25 60,48 120,48 C180,48 200,28 260,28 C320,28 350,52 430,52 C510,52 520,30 580,30 C640,30 680,50 760,50 C840,50 860,25 920,25 C980,25 1020,46 1100,46 C1180,46 1200,30 1260,30 C1320,30 1360,52 1440,52 L1440,0 Z"
           fill={topColor}
-        />
-        <path
-          d="M0,40
-             Q60,70 120,40
-             Q180,10 240,40
-             Q300,70 360,40
-             Q420,10 480,40
-             Q540,70 600,40
-             Q660,10 720,40
-             Q780,70 840,40
-             Q900,10 960,40
-             Q1020,70 1080,40
-             Q1140,10 1200,40
-             Q1260,70 1320,40
-             Q1380,10 1440,40
-             L1440,80 L0,80 Z"
-          fill={bottomColor}
         />
       </svg>
     </div>
