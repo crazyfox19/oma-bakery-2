@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink, Link, useLocation } from 'react-router-dom'
 import { ShoppingBag, Menu, X } from 'lucide-react'
 
 const navLinks = [
@@ -12,6 +12,13 @@ const navLinks = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
+  const { pathname } = useLocation()
+
+  const handleClick = (to) => {
+    if (pathname === to) {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }
 
   return (
     <nav className="sticky top-0 z-50 bg-cream shadow-sm">
@@ -29,6 +36,7 @@ export default function Navbar() {
                 key={to}
                 to={to}
                 end={to === '/'}
+                onClick={() => handleClick(to)}
                 className={({ isActive }) =>
                   `text-sm font-medium tracking-wide transition-colors pb-1 ${
                     isActive
@@ -70,7 +78,7 @@ export default function Navbar() {
               key={to}
               to={to}
               end={to === '/'}
-              onClick={() => setOpen(false)}
+              onClick={() => { handleClick(to); setOpen(false) }}
               className={({ isActive }) =>
                 `block py-3 text-sm font-medium ${
                   isActive ? 'text-primary' : 'text-gray-600'
